@@ -35,6 +35,7 @@ dependencies = [
     "aiohttp >= 3.7.1",
     "rich >= 11.0.0",
     "certifi",
+    "fickling>=0.1.3,~=0.1.0",
 ]
 
 [build-system]
