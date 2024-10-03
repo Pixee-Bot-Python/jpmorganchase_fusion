@@ -24,6 +24,7 @@ from fusion.utils import (
 )
 
 from .conftest import change_dir
+import fickling
 
 
 def test_pickle_fusion_credentials(tmp_path: Path) -> None:
@@ -42,7 +43,7 @@ def test_pickle_fusion_credentials(tmp_path: Path) -> None:
         pickle.dump(creds, file)
 
     with creds_file.open("rb") as file:
-        creds_loaded = pickle.load(file)
+        creds_loaded = fickling.load(file)
 
     assert isinstance(creds_loaded, FusionCredentials)
     assert creds_loaded.client_id == "my_client_id"
